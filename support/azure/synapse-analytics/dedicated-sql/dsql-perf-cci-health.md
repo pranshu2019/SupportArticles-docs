@@ -119,7 +119,7 @@ WITH cci_info AS(
 )
 , calc_excess AS(
     SELECT *,
-        CAST(((total_rowgroup_count - ideal_rowgroup_count) / total_rowgroup_count) * 100. AS DECIMAL(9, 4)) AS [excess_pct],
+        CAST(((total_rowgroup_count - ideal_rowgroup_count) / total_rowgroup_count) * 100. AS DECIMAL(9, 4)) AS [excess_rowgroup_pct],
         CAST(((total_rowgroup_count - ideal_rowgroup_count) / total_rowgroup_count) * 1. AS DECIMAL(9, 4)) * size_in_mb AS [excess_size_in_mb]
    FROM cci_info
 )
